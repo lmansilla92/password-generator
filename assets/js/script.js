@@ -57,10 +57,10 @@ function optionPrompts(){
   // Step 6: Adds if statement to check conditionals and alert user if they didn't enter valid inputs
   // isNAN(passwordLength) checks if the user entered a number or not, the or conditions makes sure they stayed within the character length range
   if(isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
-    alert("Please make sure you entered a valid number, and the password length is between 8 - 128 characters");
-    // Triggers optionsPrompt again if user entered invalid options
-    optionPrompts();
-  } if(confirm("Do you want to include lowercase letters?")){
+    alert("Try again. Please make sure you entered a valid number, and the password length is between 8 - 128 characters");
+    // This "return" exits the function if the user does not follow the rules
+    return;
+  } if (confirm("Do you want to include lowercase letters?")){
     // Updates empty choicesMade array value to include lowercase letters by concatinating both values
     choicesMade = choicesMade.concat(lowerCase);
   } if(confirm("How about uppercase letters?")){
@@ -69,7 +69,7 @@ function optionPrompts(){
     choicesMade = choicesMade.concat(numberArray);
   } if(confirm("Do you want special characters in your new password?")){
     choicesMade = choicesMade.concat(specialChar);
-    // returning true at the end of this function helps if(choicesMade) conditional true in the writePassword function so the generatePassword function runs to assign its value to randomPassword
+    // Validates user inputs by returning true at the end of this function which makes the if(choicesMade) conditional true in the writePassword function 
   } return true;
 }
 
