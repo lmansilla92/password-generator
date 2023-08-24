@@ -5,23 +5,37 @@ var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'
 var numberArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var specialChar = ['!', '"', '#', '$', '%', '&', '(', ')', '*', '+', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '_', '{', '}', '~']
 
-
-// Get references to the #generate element
+// STEP 1: Grabs the button in html with generate ID and stores it in the JS variable named generateBtn 
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+
+// STEP 3: This function starts after button is clicked
+// Function writes a new password to the #password input
 function writePassword() {
-  function generatePassword() {
-    
-  }
+  // Including this function inside writePassword function ensures the user is prompted with options when the button is clicked
+  optionPrompts();
+
+
   var password = generatePassword();
+
+  // Grabs the text box with password ID from the html and stores it in the JS variable named passwordText
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
 }
 
-// Add event listener to generate button
+// Declares generatePassword function 
+function generatePassword(){
+}
+
+// This function prompts the user with options for the new password criteria
+function optionPrompts(){
+  passwordLength = parseInt(prompt("How long would you like your password to be? \n (Must be between 8 - 128 characters)"))
+}
+
+
+// STEP 2: Adds event listener to generate button so when the user clicks the button, the writePassword function starts
 generateBtn.addEventListener("click", writePassword);
 
 
