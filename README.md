@@ -33,10 +33,10 @@ If you need help on how to clone a GitHub repository into your local repository,
 When you first open the deployed webpage the first thing you will see is the text area with place holder text and the Generate Password button:
     ![Default](assets/images/password-generator-default.png)
 
-When you click on the button the first prompt asking for password length appears. Other prompts asking for character types follow this prompt:
+When you click on the button the first prompt asking for password length appears.
     ![Length Prompt](assets/images/password-generator-length.png)
 
-One of the prompts that follow the length prompt is the lowercase prompt. This prompt is followed by uppercase, numbers, and special character prompts:
+A window pops up that confirms the type of characters being used. This is followed by uppercase, numbers, and special character confirmations:
     ![Character Prompt](assets/images/password-generator-lowercase.png)
 
 If the user does not enter a valid number or stay within the allowed password range, the following alert is triggered:
@@ -61,7 +61,7 @@ I would like to make the following changes to add features to this password gene
 
 ## Features
 
-This application features prompts for user input and alerts. Another method used is confirm to return true/false when password criteria is selected.
+This application features prompts for user input and alerts. Another method used is confirm() to return true/false when password criteria is selected.
 
 ## Credits
 
