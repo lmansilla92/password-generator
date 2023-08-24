@@ -30,9 +30,8 @@ function writePassword() {
   passwordText.value = randomPassword;
   // This else statement only runs if the choicesMade conditional returns false
   } else {
-    passwordText.value = "";
+    return;
   }
-
 }
 
 // STEP 9: Declares generatePassword function and runs code to generate a new password 
@@ -52,6 +51,8 @@ function generatePassword(){
 
 // STEP 5: This function prompts the user with options for the new password criteria and runs if statements that use confirm method to return true or false answers depending on user choices
 function optionPrompts(){
+  // Setting the choicesMade array to an empty array ensures that each time the user is prompted for password criteria, the criteria array is cleared and will not include any characters from the previous password generated
+  choicesMade = [];
   passwordLength = parseInt(prompt("How long would you like your password to be? \n (Must be between 8 - 128 characters)"));
 
   // Step 6: Adds if statement to check conditionals and alert user if they didn't enter valid inputs
@@ -70,7 +71,11 @@ function optionPrompts(){
   } if(confirm("Do you want special characters in your new password?")){
     choicesMade = choicesMade.concat(specialChar);
     // Validates user inputs by returning true at the end of this function which makes the if(choicesMade) conditional true in the writePassword function 
-  } return true;
+  } if (choicesMade.length !== 0) {
+    return true;
+  } else {
+    alert("You chose the length but did not make any other selections, please try again.");
+  } 
 }
 
 
