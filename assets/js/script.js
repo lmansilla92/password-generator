@@ -5,6 +5,7 @@ var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'
 var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var numberArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var specialChar = ['!', '"', '#', '$', '%', '&', '(', ')', '*', '+', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '_', '{', '}', '~'];
+// Creates an empty array to store the character choicesMade array based on the choices made in the optionPrompts function
 var choicesMade = [];
 
 // STEP 1: Grabs the button in html with the generate ID and stores it in the JS variable named generateBtn so that we can add an event listener to wait for a click of the button to trigger the main function.
