@@ -1,5 +1,5 @@
-debugger;
 // Assignment code here
+// Declares variables and assigns all the character options available to the user.
 var passwordLength = 8;
 var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
@@ -7,12 +7,11 @@ var numberArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var specialChar = ['!', '"', '#', '$', '%', '&', '(', ')', '*', '+', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '_', '{', '}', '~'];
 var choicesMade = [];
 
-// STEP 1: Grabs the button in html with generate ID and stores it in the JS variable named generateBtn 
+// STEP 1: Grabs the button in html with the generate ID and stores it in the JS variable named generateBtn so that we can add an event listener to wait for a click of the button to trigger the main function.
 var generateBtn = document.querySelector("#generate");
 
-
-// STEP 3: This function starts after button is clicked
-// Function writes a new password to the #password input
+// STEP 3: This main function starts after Generate Password button is clicked
+// The writePassword function calls the optionPrompts function, generatePassword function, grabs the text box from HTML, and displays the new password to the text box.
 function writePassword() {
   // STEP 4: Declares the choicesMade variable and stores the value of the optionPrompt() by calling the optionPrompts function
   // Including optionPrompts function inside writePassword function ensures the user is prompted with options when the button is clicked
@@ -30,6 +29,7 @@ function writePassword() {
   passwordText.value = randomPassword;
   // This else statement only runs if the choicesMade conditional returns false
   } else {
+  // Return exits the function if the else statement is triggered
     return;
   }
 }
@@ -53,6 +53,7 @@ function generatePassword(){
 function optionPrompts(){
   // Setting the choicesMade array to an empty array ensures that each time the user is prompted for password criteria, the criteria array is cleared and will not include any characters from the previous password generated
   choicesMade = [];
+  // parseInt ensure that the user input for passwordLength returns an integer to use and not a string
   passwordLength = parseInt(prompt("How long would you like your password to be? \n (Must be between 8 - 128 characters)"));
 
   // Step 6: Adds if statement to check conditionals and alert user if they didn't enter valid inputs
@@ -62,7 +63,7 @@ function optionPrompts(){
     // This "return" exits the function if the user does not follow the rules
     return;
   } if (confirm("Do you want to include lowercase letters?")){
-    // Updates empty choicesMade array value to include lowercase letters by concatinating both values
+    // The code inside the if statements updates the choicesMade array value to include character options by concatinating both arrays
     choicesMade = choicesMade.concat(lowerCase);
   } if(confirm("How about uppercase letters?")){
     choicesMade = choicesMade.concat(upperCase);
@@ -70,20 +71,18 @@ function optionPrompts(){
     choicesMade = choicesMade.concat(numberArray);
   } if(confirm("Do you want special characters in your new password?")){
     choicesMade = choicesMade.concat(specialChar);
-    // Validates user inputs by returning true at the end of this function which makes the if(choicesMade) conditional true in the writePassword function 
+    // This if statement validates the user inputs to ensure the user made selections after deciding the password length
   } if (choicesMade.length !== 0) {
+    // Returns true at the end of this function which makes the if(choicesMade) conditional true in the writePassword function 
     return true;
+    // Else statement alerts the user that they did not select any password criteria after choosing the password length
   } else {
     alert("You chose the length but did not make any other selections, please try again.");
   } 
 }
 
-
 // STEP 2: Adds event listener to generate button so when the user clicks the button, the writePassword function starts
 generateBtn.addEventListener("click", writePassword);
-
-
-
 
 // Acceptance Criteria
 // GIVEN I need a new, secure password
