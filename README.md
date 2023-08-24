@@ -24,7 +24,7 @@ In the process of writing this code, I constantly used the Chrome dev tools to p
 
 ## Contribute
 
-To view the repository of this password generator and contribute to this application click the following link:  [Password Generator](TODO: insert link)
+To view the repository of this password generator and contribute to this application click the following link:  [Password Generator](https://github.com/lmansilla92/password-generator)
 
 If you need help on how to clone a GitHub repository into your local repository, visit the following GitHub link: [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) 
 
@@ -48,7 +48,7 @@ This alert appears if a password length within range is selected but the user do
 If the user successfully picks the password criteria without triggering any alerts, the page will display the new generated password in the text area box:
     ![Generated Password](assets/images/generated-password.png)    
 
-To view the deployed webpage click the following link: [Deployed Webpage]()
+To view the deployed webpage click the following link: [Deployed Webpage](https://lmansilla92.github.io/password-generator/)
 
 ## Changes
 
